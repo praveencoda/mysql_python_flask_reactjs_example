@@ -1,5 +1,22 @@
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
+Steps to start the project:
+
+UI -
+    1. take git clone
+    2. npm install (to install all the dependency)
+    3. npm start
+
+API -
+    1. APIs are in python using flask.
+    2. cd inside_project_directory / src / server.
+    3. python server.py (to start the python server)
+
+DataBase -
+          1.i've used Mysql database
+          2. table structure would be - (int id,String first_name, String last_name,int age, String gender,String date_joining).
+          3.create a table in localhost .
+
 ## Available Scripts
 
 In the project directory, you can run:
