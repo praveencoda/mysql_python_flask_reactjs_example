@@ -59,3 +59,32 @@ padding: 0!important;
 .modal-title{
   text-align: center;
 }
+
+.sweet-container-custom{
+  display: inline-block;
+  -webkit-display:inline-block;
+  -moz-display:inline-block;
+  margin: 0px auto;
+  position: fixed;
+  transition: all 0.5s ease-in-out 0s;
+  z-index: 1031;
+  top: 50px;
+  left: 0px;
+  right: 0px;
+  background-color: #c00;
+  font-family: "Graphik",Helvetica,sans-serif;
+  color: white;
+  border: none;
+  opacity: 0.7;
+}
+
+.sweet-dismiss-custom{
+  position: absolute;
+  right: 10px;
+  top: 50%;
+  margin-top: -13px;
+  z-index: 1033;
+  left: 10px;
+  color: white !important;
+  width: 20px;
+}

@@ -6,6 +6,7 @@ import ReactDataGrid from 'react-data-grid';
 import CONSTANTS from './server/config.js';
 import DatePicker from 'react-datepicker';
 import "react-datepicker/dist/react-datepicker.css";
+import $ from 'jquery';
 var moment = require('moment');
 var Maxid = 0;
 
@@ -106,6 +107,15 @@ class AddModal extends Component {
 
       submitPOST=()=>{
         console.log("inside submitPOST");
+        if (this.state.first_name === '' || this.state.last_name === ''|| this.state.age === '' || this.state.gender === '' || this.state.date === '') {
+          // alert("all fiels are required")
+          $('.sweet-container-custom').css("background-color", "red !important");
+          $('.sweet-container-custom').fadeIn('slow').animate({ 'marginTop': "50px" });
+          $('.sweet-message').html(" &nbsp &nbsp All fields are required");
+          setTimeout(function () {
+          $('.sweet-container-custom').delay(500).fadeOut();
+          }, 3000);
+        }else {
           let create_params = {
             "id":Maxid+1,
             "first_name":this.state.first_name,
@@ -132,6 +142,7 @@ class AddModal extends Component {
             this.props.onHide();
             this.props.getRows();
           }.bind(this));
+        }
       }
 
 
@@ -163,6 +174,10 @@ class AddModal extends Component {
             </Modal.Header >
             <Modal.Body>
               <div className=" row modal_contianer">
+                <div class="col-xs-11 col-sm-4 alert alert-error alert-with-icon sweet-container-custom animated fadeInDown" style={{ "display": "none", "width": "max-content" }} role="alert" data-notify-position="top-center">
+                <button type="button" aria-hidden="true" class="fa fa-asterisk close sweet-dismiss-custom"></button><i data-notify="icon" class="material-icons fa fa-bell-o"></i> <span class="sweet-message"> You have successfully registered a user </span>
+                <a href="#" target="_blank" data-notify="url"></a>
+                </div>
                 <div className="col-md-12">
                   <div className="col-md-6">
                     <div className="title">First Name</div>
